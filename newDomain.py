@@ -7,6 +7,10 @@ __maintainer__ = "Brandon Bianchi"
 __email__ = "brandon@brandonbianchi.com"
 __status__ = "Production"
 
+# Set time in desired format
+import time
+print time.strftime('%Y%m%d')
+
 # Grab domain information, store values
 domain = raw_input('Enter new domain name (no www): \n')
 domain.rstrip('\n')
@@ -28,4 +32,5 @@ print("\n")
 print(ipWWW, ipMail)
 print("\n")
 
-
+# Create zonefile for bind
+zone.write()
