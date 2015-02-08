@@ -24,8 +24,9 @@ print(domain, prefix, tld)
 print("\n")
 
 # Get IP information for DNS
-ipWWW = raw_input('Enter www IP (I am 208.82.212.157: \n')
-ipMail = raw_input('Enter mail IP (I am 208.82.212.157: \n')
+from config import *
+ipWWW = raw_input('Enter www IP (I am %s): \n' % ipWebMe) 
+ipMail = raw_input('Enter mail IP (I am %s): \n' % ipMailMe)
 
 # Print output for debug
 print("\n")
@@ -34,7 +35,8 @@ print("\n")
 
 # Create zone file for bind
 # zoneFile = ('/etc/bind/%s' % domain) 
-zoneFile = ('/home/brandon/%s' % domain) 
+zoneFile = ('/home/brandon/tmp/%s' % domain) 
 print('Creating...')
 print(zoneFile)
 zonePopulate = open(zoneFile, 'a')
+zonePopulate.write('blah')

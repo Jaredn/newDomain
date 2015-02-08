@@ -1,0 +1,10 @@
+#!/usr/bin/python
+
+# Replace the IP addresses below with the appropriate addresses for your services
+# This does no config, its to remind you what your hosts are
+
+# Webserver Address
+ipWebMe = ('1.1.1.1')
+
+# MX record Address
+ipMailMe = ('1.1.1.1')
