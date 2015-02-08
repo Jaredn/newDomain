@@ -32,5 +32,9 @@ print("\n")
 print(ipWWW, ipMail)
 print("\n")
 
-# Create zonefile for bind
-zone.write()
+# Create zone file for bind
+# zoneFile = ('/etc/bind/%s' % domain) 
+zoneFile = ('/home/brandon/%s' % domain) 
+print('Creating...')
+print(zoneFile)
+zonePopulate = open(zoneFile, 'a')
