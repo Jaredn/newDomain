@@ -39,4 +39,21 @@ zoneFile = ('/home/brandon/tmp/%s' % domain)
 print('Creating...')
 print(zoneFile)
 zonePopulate = open(zoneFile, 'a')
-zonePopulate.write('blah')
+zonePopulate.write("""\n
+$TTL    14400
+@               IN      SOA     %s. hostmaster.%s. (
+                                %s00        ;serial
+                                14400           ;refresh
+                                1800            ;retry
+                                864000          ;expire
+                                10800           ;minimum
+                                )
+                IN      NS      a.root-survers.net.
+                IN      NS      ns1.he.net.
+
+$ORIGIN %s.
+                IN      A       %s
+                IN      MX      0 mail.%s.
+mail            IN      A       %s
+webmail         IN      A       %s
+www             IN      A       %s \n \n""") % (domain, domain, time, domain, ipMail, domain, ipMail, ipWWW, ipWWW)
